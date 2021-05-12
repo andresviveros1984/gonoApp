@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QueGonorrea</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <h2>Que Gonorrea, Sin Pelos En la lengua</h2>
+    <%= link_to "ver lo que estan diciendo", root_path %>
+    <%= link_to "sobre que gonorrea", about_path %>
+    <%= link_to "nuevo comentario", comments_new_path %>
+    
+    <%= yield %>
+  </body>
+</html>
