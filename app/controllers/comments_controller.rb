@@ -7,4 +7,8 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
+  def test
+
+  end
+
 end
