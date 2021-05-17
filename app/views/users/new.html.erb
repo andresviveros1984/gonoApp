@@ -1,0 +1,7 @@
+<br>sign up to comment
+<br>
+<%= form_for @user do |f| %>
+  Enter a user name: <%= f.text_field :user_name %><br />
+  Enter your email : <%= f.email_field :email %><br />
+  <%= f.submit('Create account to comment') %>
+<% end %>

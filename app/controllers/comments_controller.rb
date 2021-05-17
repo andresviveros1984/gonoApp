@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
   def index
-
-  end
-
-  def new
     @comments = Comment.all
   end
 
-  def test
+  def new
+    @comment = Comment.new
+  end
+
+  def create
 
   end
 
