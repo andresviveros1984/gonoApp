@@ -1,5 +1,13 @@
 <br>sign up to comment
 <br>
+
+<%if @user.errors.any?%>
+  <ul>
+    <%@user.errors.full_messages.each do |error_message|%>
+      <li><%=error_message%></li>
+    <%end%>
+  </ul>
+<%end%>
 <%= form_for @user do |f| %>
   Enter a user name: <%= f.text_field :user_name %><br />
   Enter your email : <%= f.email_field :email %><br />

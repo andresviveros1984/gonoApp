@@ -8,8 +8,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to comments_new_path
+    @user = User.new(user_params)
+    if @user.save
+      flash.alert ="Account Created"
+      redirect_to comments_new_path
+    else
+      render 'new'
+    end
   end
 
   private

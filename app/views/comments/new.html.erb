@@ -1,5 +1,15 @@
 new  comment view
+<%if @comment.errors.any?%>
+  <ul>
+    <%@comment.errors.full_messages.each do |error_comment|%>
+      <li><%=error_comment%></li>
+    <%end%>
+  </ul>
+<%end%>
 
-<%@comments.all.each do |comment|%>
-  <p><%= comment.comment %></p>
-  <%end%>
+
+
+<%= form_for @comment do |f| %>
+  Write a comment: <%= f.text_field :comment %><br />
+  <%= f.submit('Write comment') %>
+<% end %>

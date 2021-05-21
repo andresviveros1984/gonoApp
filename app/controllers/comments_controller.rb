@@ -7,8 +7,20 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def create
-
+  def create 
+    @comment = Comment.new(comments_params)
+    if @comment.save
+      flash.alert = 'comment added'
+      redirect_to comments_new_path
+    else
+      render 'new'
+    end
   end
 
+
+  private
+
+  def comments_params
+    params.require(:comment).permit(:comment)
+  end
 end
